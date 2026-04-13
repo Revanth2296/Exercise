@@ -1,0 +1,23 @@
+package Assignment;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+
+public class listHandling {
+
+    public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://the-internet.herokuapp.com/dropdown");
+        driver.manage().window().maximize();
+        Select list = new Select(driver.findElement(By.id("dropdown")));
+        System.out.println("List  allows Multiple Selection" +list.isMultiple());    
+        //list.selectByIndex(1); 
+        //list.selectByValue("1");
+        list.selectByVisibleText("Option 1");
+
+    }
+}
